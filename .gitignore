@@ -34,4 +34,4 @@ build/
 
 ### Otros ###
 serviceAccountKey.json
-src/main/resources/application.properties
+application.properties
