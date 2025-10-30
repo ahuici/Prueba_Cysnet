@@ -37,18 +37,18 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label ">Apellido: </label>
-                            <input type="text" class="form-control" th:field="*{apellido}" required/>
+                            <label class="form-label " for="inpApellido">Apellido: </label>
+                            <input id="inpApellido"  type="text" class="form-control" th:field="*{apellido}" required/>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label ">Telefono: </label>
-                            <input type="number" class="form-control" th:field="*{numTelefono}" required placeholder=""/>
+                            <label class="form-label " for="inpTelefono">Telefono: </label>
+                            <input id="inpTelefono"  type="text" class="form-control" th:field="*{numTelefono}" required placeholder=""/>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label ">Correo: </label>
-                            <input type="email" class="form-control" th:field="*{email}" required/>
+                            <label class="form-label " for="inpCorreo">Correo: </label>
+                            <input id="inpCorreo"  type="email" class="form-control" th:field="*{email}" required/>
                         </div>
 
                         <div class="d-flex justify-content-center mt-4 mb-3">
@@ -59,7 +59,16 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div th:if="${mensajeExito}" class="alert alert-success alert-dismissible fade show w-50 mx-auto" role="alert">
+        <span th:text="${mensajeExito}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div th:if="${mensajeError}" class="alert alert-danger alert-dismissible fade show w-50 mx-auto" role="alert">
+        <span th:text="${mensajeError}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
     <h1>Curso Ciberseguridad</h1>
