@@ -11,9 +11,9 @@ public class Inscripcion {
 
     private String email;
 
-    private int numTelefono;
+    private Integer numTelefono;
 
-    public Inscripcion(String id, String nombre, String apellido, String email, int numTelefono) {
+    public Inscripcion(String id, String nombre, String apellido, String email, Integer numTelefono) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -56,11 +56,11 @@ public class Inscripcion {
         this.email = email;
     }
 
-    public int getNumTelefono() {
+    public Integer getNumTelefono() {
         return numTelefono;
     }
 
-    public void setNumTelefono(int numTelefono) {
+    public void setNumTelefono(Integer numTelefono) {
         this.numTelefono = numTelefono;
     }
 

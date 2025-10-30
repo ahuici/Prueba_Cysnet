@@ -1,5 +1,8 @@
 body {
     margin: 0px;
     padding: 0px;
-    margin-top: 131px; /* Margin para que el texto no se quede detras del fragmento del header*/
+}
+
+#descripcion {
+    margin-top: 96px; /* Margen para que no se solape con el header*/
 }
