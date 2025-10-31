@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="certificaciones"  class="card mt-5 ms-4 me-4 d-flex align-items-center justify-content-between flex-column flex-md-row animacion">
         <div class="ms-4">
             <p class="fs-5 text-justify">
@@ -56,7 +56,7 @@
 
                     <h2 class="text-center mb-4 mt-2 text-primary">Inscripción</h2>
 
-                    <form action="#" th:action="@{/inscripcion}" th:object="${inscripcion}" method="post">
+                    <form id="formularioInscripcion" action="#" th:action="@{/inscripcion}" th:object="${inscripcion}" method="post">
 
                         <div class="mb-3">
                             <label class="form-label" for="inpNombre">Nombre:</label>
@@ -88,14 +88,21 @@
         </div>
     </div>
 
-    <div th:if="${mensajeExito}" class="alert alert-success alert-dismissible fade show w-50 mx-auto" role="alert">
-        <span th:text="${mensajeExito}"></span>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-    <div th:if="${mensajeError}" class="alert alert-danger alert-dismissible fade show w-50 mx-auto" role="alert">
-        <span th:text="${mensajeError}"></span>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="modal fade" id="respuestaModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title">Resultado de la inscripción</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <p id="modalMensaje" class="fs-5"></p>
+                </div>
+                <div class="modal-footer justify-content-center border-0 mb-2">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div th:insert="fragments/footer :: footer"></div>
@@ -116,6 +123,36 @@
             }, { threshold: 0.2 });
 
             sections.forEach(section => observer.observe(section));
+        });
+
+
+        document.getElementById("formularioInscripcion").addEventListener("submit", async e => {
+          e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            const res = await fetch(form.action, {
+              method: form.method,
+              body: JSON.stringify(Object.fromEntries(formData)),
+              headers: { "Content-Type": "application/json" }
+            });
+
+            const mensaje = await res.text();
+
+            const modalMensaje = document.getElementById("modalMensaje");
+            modalMensaje.textContent = mensaje;
+
+            // Opcional: colorear según éxito/error
+            modalMensaje.className = res.ok ? "text-success fw-bold" : "text-danger fw-bold";
+
+            // Mostrar el modal
+            const modal = new bootstrap.Modal(document.getElementById('respuestaModal'));
+            modal.show();
+
+            if (res.ok) {
+              document.getElementById("formularioInscripcion").reset();
+            }
         });
     </script>
 </body>

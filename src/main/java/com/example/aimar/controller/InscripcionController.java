@@ -23,19 +23,4 @@ public class InscripcionController {
         return "index";
     }
 
-    @PostMapping({"/inscripcion","/inscripcion/"})
-    public String inscripcionPost(@ModelAttribute Inscripcion inscripcion, Model model, RedirectAttributes redirectAttributes){
-        //TODO Validacion formulario hecha, falta validar si se guarda en base de datos, se pierde, esta caida...
-        String respuesta = inscripcionService.save(inscripcion);
-
-        model.addAttribute("respuesta", respuesta);
-
-        if ("".equals(respuesta)) {
-            redirectAttributes.addFlashAttribute("mensajeExito", "Te has inscrito correctamente");
-        } else {
-            redirectAttributes.addFlashAttribute("mensajeError", respuesta);
-        }
-
-        return "redirect:/";
-    }
 }
