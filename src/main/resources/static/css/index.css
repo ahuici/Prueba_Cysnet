@@ -45,3 +45,20 @@ footer h3 {
   text-align: center;
   width: 100%;
 }
+
+.curso-card {
+    width: 450px;
+    height: 350px;
+    flex: 0 0 auto;
+    min-width: 250px;
+    border-radius: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+}
+
+.d-flex.flex-wrap {
+    align-content: flex-start;
+}
