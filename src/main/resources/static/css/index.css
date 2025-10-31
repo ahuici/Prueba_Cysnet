@@ -62,3 +62,17 @@ footer h3 {
 .d-flex.flex-wrap {
     align-content: flex-start;
 }
+
+/* ANIMACION */
+/* Dsde abajo */
+.animacion {
+    opacity: 0;
+    transform: translateY(32px); /* Puedes cambiar por translateX si quieres */
+    transition: all 0.65s ease;
+}
+
+/* Cuando es visible */
+.animacion.visible {
+    opacity: 1;
+    transform: translateX(0);
+}

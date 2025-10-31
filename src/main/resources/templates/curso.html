@@ -11,14 +11,14 @@
     <div th:insert="fragments/header :: header"></div>
 
     <div class="container my-4">
-        <div class="d-flex flex-wrap justify-content-center gap-4 w-">
+        <div class="d-flex flex-wrap justify-content-center gap-4">
 
             <div class="col-12" th:if="${#lists.isEmpty(cursos)}">
                 <p class="text-muted text-center mb-0">No hay cursos disponibles.</p>
             </div>
 
             <div th:each="curso : ${cursos}">
-                <div class="card curso-card shadow-sm">
+                <div class="card curso-card shadow-sm animacion">
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title mb-2" th:text="${curso.titulo}">Titulo del curso</h5>
 
@@ -42,5 +42,22 @@
 
 
     <div th:insert="fragments/footer :: footer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".animacion");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
 </body>
 </html>
