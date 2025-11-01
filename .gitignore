@@ -35,3 +35,4 @@ build/
 ### Otros ###
 serviceAccountKey.json
 application.properties
+.env

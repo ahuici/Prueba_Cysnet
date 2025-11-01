@@ -42,7 +42,7 @@ public class InscripcionService {
     }
 
     public String save(Inscripcion inscripcion) {
-        String ID = "Inscripcion " + getAll().size();
+        String ID = "Inscripcion " + ( getAll().size() + 1);
         inscripcion.setId(ID);
 
         if (inscripcion.getNombre().length() <= 2 ) return "El nombre debe contener al menos 3 caracteres";
