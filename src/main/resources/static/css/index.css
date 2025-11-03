@@ -41,7 +41,7 @@
   }
 }
 
-footer h3 {
+footer h3, #direccion {
   text-align: center;
   width: 100%;
 }
