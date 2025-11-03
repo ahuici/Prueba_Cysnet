@@ -1,55 +1,43 @@
-#cursos, #certificaciones { gap: 1rem; }
-
-@media (min-width: 768px) {
-  #cursos .image-col,
-  #certificaciones .image-col,
-  #certificaciones .text-col,
-  #cursos .text-col {
-    flex: 0 0 48%;
-    max-width: 48%;
-  }
+/* CURSOS Y CERTIFICACIONES INDEX */
+#cursos .image-col,
+#certificaciones .image-col {
+  flex: 0 0 40%;
+  max-width: 40%;
 }
 
-@media (max-width: 767.98px) {
-  #cursos .image-col,
-  #certificaciones .image-col,
-  #certificaciones .text-col,
-  #cursos .text-col {
-    flex: 0 0 96%;
-    max-width: 96%;
-  }
+#cursos .text-col,
+#certificaciones .text-col {
+  flex: 0 0 60%;
+  max-width: 60%;
 }
 
-#certificaciones .image-col img,
-#cursos .image-col img {
+.image-col img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-#cursos .text-col, #certificaciones .text-col { display: flex; flex-direction: column; justify-content: center; }
-#cursos .text-col p, #certificaciones .text-col p {
-    margin: 32px;
-    text-justify: justify;
-}
+@media (max-width: 768px) {
+  #cursos,
+  #certificaciones {
+    flex-direction: column !important;
+  }
 
-@media (min-width: 768px) {
-  footer .row > .col-12.col-md-6 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
+  #cursos .image-col,
+  #certificaciones .image-col,
+  #cursos .text-col,
+  #certificaciones .text-col {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .image-col img {
+    height: auto;
   }
 }
 
-footer h3, #direccion {
-  text-align: center;
-  width: 100%;
-}
-
-.d-flex.flex-wrap {
-    align-content: flex-start;
-}
-
+/* CURSOS EN LA PAGINA CURSOS */
 .curso-card {
   flex: 1 1 100%;
   height: 350px;
@@ -77,8 +65,25 @@ footer h3, #direccion {
   }
 }
 
-/* ANIMACION */
-/* Dsde abajo */
+/* FOOTER */
+footer h3, #direccion {
+  text-align: center;
+  width: 100%;
+}
+
+.d-flex.flex-wrap {
+    align-content: flex-start;
+}
+
+@media (min-width: 768px) {
+  footer .row > .col-12.col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* ANIMACIONES */
+/* Desde abajo */
 .animacion {
     opacity: 0;
     transform: translateY(32px); /* Puedes cambiar por translateX si quieres */

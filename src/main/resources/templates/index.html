@@ -11,20 +11,17 @@
     <!-- TODO Falta el responsive-->
     <div th:insert="fragments/header :: header"></div>
 
-    <div id="cursos"  class="card mt-5 ms-4 me-4 d-flex align-items-center justify-content-between flex-column flex-md-row animacion">
-        <div class=" d-flex justify-content-center image-col">
-            <img src="/images/imgCursos.png" alt="Imagen cursos"/>
+    <div id="cursos"  class="card mt-5 ms-4 me-4 d-flex flex-column flex-md-row animacion overflow-hidden">
+        <div class="image-col">
+            <img src="/images/imgCursos.png" alt="Imagen cursos" class="img-fluid w-100 h-100 object-fit-cover" />
         </div>
-        <div class="ms-4 text-col">
+        <div class=" text-col d-flex flex-column justify-content-center p-4">
             <p class="fs-5 text-justify">
                 En CiberCursos tenemos una gran variedad de cursos sobre ciberseguridad. Hoy en día es muy importante la
-                ciberseguridad, hay que proteger bien los datos, dispositivos
-                y demas frente ataques cada vez mas elaborados. Desde CiberCursos ofrecemos cursos y certificaciones a
-                buen precio y para todo tipo de niveles, desde principiantes hasta profesionales.
-                Entre los cursos disponibles tenemos ciberseguridad básica, ciberseguridad avanzada, pentesting,
-                phishing...
-                Nuestros certificados tienen validez en toda España y cuenta con el respaldo de grandes empresas
-                tecnologicas.
+                ciberseguridad, hay que proteger bien los datos, dispositivos y demás frente a ataques cada vez más elaborados.
+                Desde CiberCursos ofrecemos cursos y certificaciones a buen precio y para todo tipo de niveles, desde principiantes
+                hasta profesionales. Entre los cursos disponibles tenemos ciberseguridad básica, ciberseguridad avanzada, pentesting, phishing...
+                Nuestros certificados tienen validez en toda España y cuentan con el respaldo de grandes empresas tecnológicas.
             </p>
             <div class="d-flex justify-content-center mt-4 mb-3">
                 <button class="btn btn-primary mt-3" onclick="window.location.href='/cursos'">Ir a cursos</button>
@@ -32,22 +29,23 @@
         </div>
     </div>
 
-    <div id="certificaciones"  class="card mt-5 ms-4 me-4 d-flex align-items-center justify-content-between flex-column flex-md-row animacion">
-        <div class="ms-4">
+    <div id="certificaciones"  class="card mt-5 ms-4 me-4 d-flex flex-column flex-md-row animacion overflow-hidden">
+        <div class="text-col d-flex flex-column justify-content-center p-4">
             <p class="fs-5 text-justify">
-                CiberCursos tambien ofrece certificados al acabar los cursos. Estas certificaciones tienen validez
+                CiberCursos también ofrece certificados al acabar los cursos. Estas certificaciones tienen validez
                 en toda España y son reconocidas por grandes empresas. Estos certificados vienen incluidos en los cursos,
-                aunque si crees que estas capacitado para certificarte sin hacer los cursos, puedes hacer el examen y
-                conseguir la certificacion.
+                aunque si crees que estás capacitado para certificarte sin hacer los cursos, puedes hacer el examen y
+                conseguir la certificación.
             </p>
-            <div class=" d-flex justify-content-center mt-4 mb-3">
-                <button class="btn btn-primary mt-3" disabled>Proximamente</button>
+            <div class="d-flex justify-content-center mt-4 mb-3">
+                <button class="btn btn-primary mt-3" disabled>Próximamente</button>
             </div>
         </div>
-        <div class=" d-flex justify-content-center image-col">
-            <img src="/images/imgCertificados.png" alt="Imagen certificaciones"/>
+        <div class=" image-col">
+            <img src="/images/imgCertificados.png" alt="Imagen certificaciones" class="img-fluid w-100 h-100 object-fit-cover" />
         </div>
     </div>
+
 
     <div id="formulario" class="container mt-5 mb-4 animacion">
         <div class="row justify-content-center">
