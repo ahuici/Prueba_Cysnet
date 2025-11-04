@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ### Otros ###
-serviceAccountKey.json
-application.properties
-.env
+#serviceAccountKey.json
+#application.properties
+#.env
